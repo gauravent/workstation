@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gaurav Enterprises</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #f8f9fa 0%, #eaf1fb 100%);
+      color: #222;
+    }
+    header {
+      background: linear-gradient(90deg, #003366 60%, #0055a5 100%);
+      color: white;
+      padding: 35px 20px 20px 20px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      letter-spacing: 1px;
+    }
+    .specialist {
+      background: #fff;
+      text-align: center;
+      padding: 16px 10px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #0055a5;
+      border-bottom: 2px solid #0055a5;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+      letter-spacing: 0.5px;
+    }
+    nav {
+      background: #0055a5;
+      padding: 10px 0;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+    nav a {
+      color: #fff;
+      margin: 0 18px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 17px;
+      transition: color 0.2s;
+      position: relative;
+    }
+    nav a:hover, nav a:focus {
+      color: #ffde59;
+    }
+    .intro {
+      max-width: 900px;
+      margin: 38px auto 0 auto;
+      background: #fff;
+      padding: 28px 24px;
+      border-radius: 14px;
+      box-shadow: 0 4px 24px rgba(0,85,165,0.06);
+      text-align: center;
+      font-size: 1.16rem;
+      line-height: 1.7;
+    }
+    .section {
+      padding: 40px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .section h2 {
+      text-align: center;
+      margin-bottom: 28px;
+      color: #003366;
+      font-size: 2.1rem;
+      letter-spacing: 1px;
+      position: relative;
+    }
+    .section h2::after {
+      content: '';
+      display: block;
+      margin: 8px auto 0 auto;
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, #0055a5, #ffde59);
+      border-radius: 2px;
+    }
+    .album-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      justify-content: center;
+    }
+    .album-grid img, .album-grid video {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,85,165,0.10);
+      transition: transform 0.2s, box-shadow 0.2s;
+      background: #eaf1fb;
+    }
+    .album-grid img:hover, .album-grid video:hover {
+      transform: scale(1.04);
+      box-shadow: 0 8px 24px rgba(0,85,165,0.19);
+    }
+    .services-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 26px;
+      margin: 30px 0 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    .service-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,85,165,0.07);
+      padding: 22px 28px;
+      min-width: 220px;
+      max-width: 300px;
+      text-align: center;
+      font-size: 1.07rem;
+      color: #003366;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .service-card:hover {
+      box-shadow: 0 6px 20px rgba(0,85,165,0.14);
+      transform: translateY(-4px) scale(1.03);
+    }
+    .team {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+    .team-member {
+      max-width: 250px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,85,165,0.09);
+      padding: 20px 10px 18px 10px;
+      margin-bottom: 20px;
+      transition: box-shadow 0.2s;
+    }
+    .team-member:hover {
+      box-shadow: 0 8px 24px rgba(0,85,165,0.16);
+    }
+    .team-member img {
+      width: 120px;
+      border-radius: 50%;
+      border: 4px solid #0055a5;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 12px rgba(0,85,165,0.08);
+    }
+    .employee-count {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #003366;
+    }
+    iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,85,165,0.07);
+    }
+    footer {
+      background: linear-gradient(90deg, #003366 60%, #0055a5 100%);
+      color: white;
+      text-align: center;
+      padding: 24px 10px;
+      font-size: 1.1rem;
+      margin-top: 40px;
+      letter-spacing: 1px;
+    }
+    .contact-box {
+      background: #fff;
+      padding: 28px 24px;
+      border-radius: 14px;
+      box-shadow: 0 4px 24px rgba(0,85,165,0.06);
+      max-width: 600px;
+      margin: auto;
+      margin-bottom: 22px;
+      font-size: 1.13rem;
+    }
+    .gst-box {
+      background: #eaf1fb;
+      padding: 18px 24px;
+      border-radius: 10px;
+      box-shadow: 0 1px 4px rgba(0,85,165,0.07);
+      max-width: 600px;
+      margin: 0 auto 0 auto;
+      font-size: 1.06rem;
+      color: #003366;
+      text-align: center;
+    }
+    .contact-form {
+      background: #fff;
+      max-width: 600px;
+      margin: 30px auto 0 auto;
+      padding: 26px 20px 20px 20px;
+      border-radius: 14px;
+      box-shadow: 0 4px 24px rgba(0,85,165,0.06);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .contact-form label {
+      font-weight: 500;
+      color: #003366;
+      margin-bottom: 4px;
+      display: block;
+    }
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 7px;
+      border: 1px solid #bcd6ee;
+      font-size: 1rem;
+      transition: border 0.2s;
+      font-family: inherit;
+      resize: none;
+    }
+    .contact-form input:focus, .contact-form textarea:focus {
+      border: 1.5px solid #0055a5;
+      outline: none;
+    }
+    .contact-form button {
+      background: linear-gradient(90deg, #0055a5 60%, #003366 100%);
+      color: #fff;
+      border: none;
+      border-radius: 7px;
+      padding: 12px 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: background 0.2s, box-shadow 0.2s;
+      box-shadow: 0 2px 8px rgba(0,85,165,0.07);
+    }
+    .contact-form button:hover {
+      background: linear-gradient(90deg, #003366 60%, #0055a5 100%);
+      box-shadow: 0 4px 16px rgba(0,85,165,0.13);
+    }
+    ul {
+      max-width: 800px;
+      margin: auto;
+      padding-left: 20px;
+    }
+    ul li {
+      margin-bottom: 10px;
+      font-size: 1.08rem;
+    }
+    @media (max-width: 800px) {
+      .album-grid img, .album-grid video {
+        width: 98vw;
+        max-width: 340px;
+        height: 180px;
+      }
+      .team {
+        flex-direction: column;
+        gap: 20px;
+      }
+      .services-list {
+        flex-direction: column;
+        gap: 18px;
+      }
+    }
+    @media (max-width: 600px) {
+      .section {
+        padding: 28px 5px;
+      }
+      .intro, .contact-box, .gst-box, .contact-form {
+        padding: 18px 7px;
+      }
+      .album-grid img, .album-grid video {
+        width: 100vw;
+        max-width: 98vw;
+        height: 140px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Gaurav Enterprises</h1>
+  <p>Established in 2007 | Precision Engineering | CNC & Conventional Machining</p>
+</header>
+
+<div class="specialist">
+  Specialist in: CNC Wire Cutting of Dies, Jigs, Fixtures & Moulds
+</div>
+
+<nav>
+  <a href="#intro">About</a>
+  <a href="#services">Services</a>
+  <a href="#album">Gallery</a>
+  <a href="#founders">Founders</a>
+  <a href="#subsidiary">Subsidiary</a>
+  <a href="#vendors">Vendors</a>
+  <a href="#map">Map</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<div class="intro" id="intro">
+  <strong>Gaurav Enterprises</strong> is a leading engineering company based in Pune, Maharashtra, specializing in CNC wire cutting, EDM, and precision machining since 2007. Our experienced team delivers high-quality dies, jigs, fixtures, and moulds for diverse industries. With a commitment to accuracy, timely delivery, and customer satisfaction, we have built lasting partnerships with major OEMs and SMEs across Maharashtra.
+</div>
+
+<section class="section" id="services">
+  <h2>Our Services</h2>
+  <div class="services-list">
+    <div class="service-card">
+      <strong>CNC Wire Cutting</strong><br>
+      Precision cutting of complex dies, jigs, fixtures, and moulds with tight tolerances.
+    </div>
+    <div class="service-card">
+      <strong>EDM Machining</strong><br>
+      High-accuracy spark erosion for intricate shapes and fine details.
+    </div>
+    <div class="service-card">
+      <strong>VMC & Milling</strong><br>
+      Multi-axis machining for components requiring advanced geometry and surface finish.
+    </div>
+    <div class="service-card">
+      <strong>Grinding & Finishing</strong><br>
+      Surface and cylindrical grinding for superior accuracy and finish.
+    </div>
+    <div class="service-card">
+      <strong>Custom Fabrication</strong><br>
+      Prototyping and small-batch manufacturing for specialized industrial needs.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="album">
+<h2>Machine Gallery & Videos</h2>
+<div class="album-grid">
+  <!-- CNC Wirecut Machine -->
+  <div>
+    <img src="wirecut.jpg" alt="CNC Wirecut Machine" style="width:100%; height:auto;">
+    <p style="text-align:center; margin-top:10px;">CNC Wirecut Machine</p>
+  </div>
+
+  <!-- EDM Machine -->
+  <div>
+    <img src="edm.jpg" alt="EDM Machine" style="width:100%; height:auto;">
+    <p style="text-align:center; margin-top:10px;">EDM Machine</p>
+  </div>
+
+  <!-- VMC Machine -->
+  <div>
+    <img src="vmc.jpg" alt="VMC Machine" style="width:100%; height:auto;">
+    <p style="text-align:center; margin-top:10px;">VMC Machine</p>
+  </div>
+
+  <!-- Grinding Machine -->
+  <div>
+    <img src="grinding.jpg" alt="Grinding Machine" style="width:100%; height:auto;">
+    <p style="text-align:center; margin-top:10px;">Grinding Machine</p>
+  </div>
+
+  <!-- Sample Video -->
+  <div>
+    <video controls style="width:100%; height:auto;">
+     <iframe width="560" height="315" src="https://www.youtube.com/embed/rM51fgCgx4U" title="CNC Wire Cut EDM Machine DEMO" frameborder="0" allowfullscreen></iframe>
+    <p>CNC Wire Cut EDM Machine DEMO</p>
+    </video>
+    <p style="text-align:center; margin-top:10px;">Sample Machine Process Video</p>
+  </div>
+</div>
+
+  <p style="text-align:center; margin-top: 20px;">
+    Our shop floor is equipped with state-of-the-art Wirecut, EDM, Milling, VMC, Turning, Drilling, and Grinding machines.<br>
+    We focus on high-quality precision work to serve automotive, engineering, and manufacturing industries.
+  </p>
+</section>
+
+<section class="section" id="founders">
+  <h2>Founders & Leadership</h2>
+  <div class="team">
+    <div class="team-member">
+      <img src="https://via.placeholder.com/150?text=Namdev" alt="Namdev Bandawane">
+      <h3>Mr. Namdev Bandawane</h3>
+      <p>Founder</p>
+      <br>Contact: 9689880061</p>
+    </div>
+    <div class="team-member">
+      <img src="https://via.placeholder.com/150?text=Devanand" alt="Devanand Borhade">
+      <h3>Mr. Devanand Borhade</h3>
+      <p>Managing Director (MD)<br>Contact: 9112407590</p>
+    </div>
+  </div>
+  <div class="employee-count">
+    Total Employees: 15+
+  </div>
+</section>
+
+<section class="section" id="subsidiary">
+  <h2>Deva Enterprises (Subsidiary)</h2>
+  <p style="text-align:center; max-width:800px; margin:auto;">
+    <strong>Deva Enterprises</strong>, founded in 2024 by <strong>Mr. Devanand Borhade</strong>, is a subsidiary of Gaurav Enterprises.
+    It focuses on precision machining and custom fabrication jobs, powered by modern equipment and skilled manpower.
+  </p>
+  <div class="album-grid" style="margin-top:30px;">
+    <img src="Factory.jpg" alt="Factory">
+    <img src="Workshop.jpg" alt="Workshop">
+  </div>
+  <div class="employee-count">
+    Deva Enterprises Employees: 5+
+  </div>
+</section>
+
+<section class="section" id="vendors">
+  <h2>Our Esteemed Vendors & Clients</h2>
+  <ul>
+    <li>Valeo India Pvt. Ltd.</li>
+    <li>Kirloskar Oil Engines</li>
+    <li>Mahle Anand Thermal Systems</li>
+    <li>Anand Group</li>
+    <li>Multiple SMEs in Bhosari & Chakan MIDC</li>
+    <li>CMI ( Vendor from Shrirampur)</li>
+    <li>Minraj Gears (Kolhapur)</li>
+    <li>ULTRA (Talwade)</li>
+  </ul>
+</section>
+<section class="section" id="map">
+  <h2>Our Location</h2>
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.2087993213356!2d73.83928147604406!3d18.62106736843961!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b87ff8a44837%3A0x515977f29abd09c7!2sMahananda%20Enterprises%20%2Fgaurav%20enterprises!5e0!3m2!1sen!2sin!4v1717000000000!5m2!1sen!2sin"
+    width="100%"
+    height="400"
+    style="border:0; border-radius:12px; box-shadow:0 2px 8px rgba(0,85,165,0.07);"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+  <p style="text-align:center; margin-top: 12px; font-size:1.08rem;">
+    S. No. 679, Behind Hotel Vishwavilas, D. S. Landge Bldg, Landewadi, Bhosari, Pune – 411039
+  </p>
+</section>
+
+
+<section class="section" id="contact">
+  <h2>Contact Us</h2>
+  <div class="contact-box">
+    <p><strong>Address:</strong><br>
+      S. No. 679, Behind Hotel Vishwavilas,<br>
+      D. S. Landge Bldg, Landewadi, Bhosari,<br>
+      Pune – 411039
+    </p>
+    <p><strong>Phone:</strong> 9689880061 / 62</p>
+    <p><strong>MD Contact:</strong> Mr. Devanand Borhade – 9112407590</p>
+    <p><strong>Email:</strong> gauraventerprises3345@gmail.com</p>
+  </div>
+  <div class="gst-box">
+    <strong>GSTIN:</strong> 27AUAPB9260H1ZR<br>
+    <strong>HSN/SAC Code:</strong> 998333
+  </div>
+  <form class="contact-form" action="mailto:gauraventerprises3345@gmail.com" method="POST" enctype="text/plain">
+    <label for="name">Name *</label>
+    <input type="text" id="name" name="Name" required>
+    <label for="email">Email *</label>
+    <input type="email" id="email" name="Email" required>
+    <label for="phone">Phone</label>
+    <input type="tel" id="phone" name="Phone">
+    <label for="message">Message *</label>
+    <textarea id="message" name="Message" rows="4" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<footer>
+  &copy; 2025 Gaurav Enterprises. All Rights Reserved.
+</footer>
+
+</body>
+</html>
