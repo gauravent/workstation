@@ -5,17 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gaurav Enterprises</title>
 
+<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
 
 body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
   background: linear-gradient(135deg, #eef2f7, #dfe9f3);
   color: #222;
 }
@@ -23,26 +20,25 @@ body {
 /* HEADER */
 header {
   background: linear-gradient(135deg, #003366, #0055a5);
-  color: #fff;
+  color: white;
+  padding: 50px 20px;
   text-align: center;
-  padding: 60px 20px;
 }
 
-header h1 {
-  font-size: 40px;
-  font-weight: 600;
-}
-
-header p {
-  opacity: 0.9;
-  margin-top: 10px;
+/* SPECIALIST */
+.specialist {
+  background: #fff;
+  text-align: center;
+  padding: 12px;
+  font-weight: bold;
+  color: #0055a5;
 }
 
 /* NAVBAR */
 nav {
   position: sticky;
   top: 0;
-  background: rgba(0,85,165,0.9);
+  background: rgba(0,85,165,0.95);
   backdrop-filter: blur(10px);
   padding: 12px;
   text-align: center;
@@ -54,16 +50,26 @@ nav a {
   margin: 0 15px;
   text-decoration: none;
   font-weight: 500;
-  transition: 0.3s;
 }
 
 nav a:hover {
   color: #ffd54f;
 }
 
+/* INTRO */
+.intro {
+  max-width: 900px;
+  margin: 30px auto;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
 /* SECTION */
 .section {
-  padding: 60px 20px;
+  padding: 50px 20px;
   max-width: 1200px;
   margin: auto;
 }
@@ -71,38 +77,33 @@ nav a:hover {
 .section h2 {
   text-align: center;
   margin-bottom: 30px;
-  font-size: 28px;
   color: #003366;
 }
 
-/* CARDS */
-.card {
-  background: rgba(255,255,255,0.7);
-  backdrop-filter: blur(12px);
-  border-radius: 15px;
-  padding: 20px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-8px);
-}
-
 /* SERVICES */
-.services {
+.services-list {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
 }
 
-.service {
-  width: 250px;
+.service-card {
+  width: 260px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  text-align: center;
+  transition: 0.3s;
 }
 
-/* PRODUCT GALLERY */
-.gallery {
+.service-card:hover {
+  transform: translateY(-6px);
+}
+
+/* GALLERY */
+.album-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 25px;
@@ -112,7 +113,6 @@ nav a:hover {
   position: relative;
   overflow: hidden;
   border-radius: 15px;
-  cursor: pointer;
 }
 
 .gallery-item img {
@@ -126,14 +126,13 @@ nav a:hover {
   transform: scale(1.1);
 }
 
-/* OVERLAY EFFECT */
 .overlay {
   position: absolute;
   bottom: 0;
-  background: linear-gradient(transparent, rgba(0,0,0,0.8));
-  color: #fff;
   width: 100%;
-  padding: 15px;
+  padding: 12px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  color: white;
   opacity: 0;
   transition: 0.4s;
 }
@@ -142,40 +141,51 @@ nav a:hover {
   opacity: 1;
 }
 
+/* VIDEO */
+.video-box iframe {
+  width: 100%;
+  height: 220px;
+  border-radius: 12px;
+}
+
 /* TEAM */
 .team {
   display: flex;
-  gap: 30px;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
 }
 
-.member {
-  text-align: center;
+.team-member {
   width: 220px;
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
 }
 
-.member img {
-  width: 120px;
+.team-member img {
+  width: 100px;
   border-radius: 50%;
-  margin-bottom: 10px;
-  border: 4px solid #0055a5;
 }
 
 /* CONTACT */
-.contact-box {
+.contact-box, .contact-form, .gst-box {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin: 15px auto;
   max-width: 600px;
-  margin: auto;
-  text-align: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
 }
 
 /* FOOTER */
 footer {
   background: #003366;
-  color: #fff;
+  color: white;
   text-align: center;
   padding: 20px;
-  margin-top: 40px;
 }
 
 </style>
@@ -184,88 +194,98 @@ footer {
 <body>
 
 <header>
-  <h1>Gaurav Enterprises</h1>
-  <p>Precision Engineering | CNC | EDM | Since 2007</p>
+<h1>Gaurav Enterprises</h1>
+<p>Established in 2007 | Precision Engineering</p>
 </header>
 
+<div class="specialist">
+Specialist in CNC Wire Cutting, Dies, Jigs & Fixtures
+</div>
+
 <nav>
-  <a href="#services">Services</a>
-  <a href="#gallery">Products</a>
-  <a href="#team">Team</a>
-  <a href="#contact">Contact</a>
+<a href="#intro">About</a>
+<a href="#services">Services</a>
+<a href="#album">Gallery</a>
+<a href="#founders">Team</a>
+<a href="#contact">Contact</a>
 </nav>
 
-<!-- SERVICES -->
+<div class="intro" id="intro">
+Gaurav Enterprises is a leading engineering company specializing in CNC machining and precision work.
+</div>
+
 <section class="section" id="services">
-  <h2>Our Services</h2>
-  <div class="services">
-    <div class="card service">CNC Wire Cutting</div>
-    <div class="card service">EDM Machining</div>
-    <div class="card service">VMC & Milling</div>
-    <div class="card service">Grinding</div>
-  </div>
+<h2>Our Services</h2>
+<div class="services-list">
+<div class="service-card">CNC Wire Cutting</div>
+<div class="service-card">EDM Machining</div>
+<div class="service-card">VMC & Milling</div>
+<div class="service-card">Grinding</div>
+<div class="service-card">Fabrication</div>
+</div>
 </section>
 
-<!-- PRODUCT GALLERY -->
-<section class="section" id="gallery">
-  <h2>Our Products & Machines</h2>
-  <div class="gallery">
+<section class="section" id="album">
+<h2>Machine Gallery</h2>
 
-    <div class="gallery-item">
-      <img src="wirecut.jpg">
-      <div class="overlay">CNC Wirecut Machine</div>
-    </div>
+<div class="album-grid">
 
-    <div class="gallery-item">
-      <img src="edm.jpg">
-      <div class="overlay">EDM Machine</div>
-    </div>
+<div class="gallery-item">
+<img src="wirecut.jpg">
+<div class="overlay">CNC Wirecut</div>
+</div>
 
-    <div class="gallery-item">
-      <img src="vmc.jpg">
-      <div class="overlay">VMC Machine</div>
-    </div>
+<div class="gallery-item">
+<img src="edm.jpg">
+<div class="overlay">EDM Machine</div>
+</div>
 
-    <div class="gallery-item">
-      <img src="grinding.jpg">
-      <div class="overlay">Grinding Machine</div>
-    </div>
+<div class="gallery-item">
+<img src="vmc.jpg">
+<div class="overlay">VMC Machine</div>
+</div>
 
-  </div>
+<div class="gallery-item">
+<img src="grinding.jpg">
+<div class="overlay">Grinding</div>
+</div>
+
+<div class="video-box">
+<iframe src="https://www.youtube.com/embed/rM51fgCgx4U" allowfullscreen></iframe>
+</div>
+
+</div>
 </section>
 
-<!-- TEAM -->
-<section class="section" id="team">
-  <h2>Leadership</h2>
-  <div class="team">
+<section class="section" id="founders">
+<h2>Team</h2>
+<div class="team">
 
-    <div class="card member">
-      <img src="https://via.placeholder.com/150">
-      <h3>Mr. Namdev Bandawane</h3>
-      <p>Founder</p>
-    </div>
+<div class="team-member">
+<img src="https://via.placeholder.com/100">
+<h3>Namdev</h3>
+</div>
 
-    <div class="card member">
-      <img src="https://via.placeholder.com/150">
-      <h3>Mr. Devanand Borhade</h3>
-      <p>Managing Director</p>
-    </div>
+<div class="team-member">
+<img src="https://via.placeholder.com/100">
+<h3>Devanand</h3>
+</div>
 
-  </div>
+</div>
 </section>
 
-<!-- CONTACT -->
 <section class="section" id="contact">
-  <h2>Contact</h2>
-  <div class="card contact-box">
-    <p><strong>Phone:</strong> 9689880061</p>
-    <p><strong>Email:</strong> gauraventerprises3345@gmail.com</p>
-    <p><strong>Location:</strong> Bhosari, Pune</p>
-  </div>
+<h2>Contact</h2>
+
+<div class="contact-box">
+<p>Phone: 9689880061</p>
+<p>Email: gauraventerprises3345@gmail.com</p>
+</div>
+
 </section>
 
 <footer>
-  © 2025 Gaurav Enterprises
+© 2025 Gaurav Enterprises
 </footer>
 
 </body>
